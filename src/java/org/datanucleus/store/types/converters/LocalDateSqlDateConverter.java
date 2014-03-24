@@ -20,10 +20,10 @@ package org.datanucleus.store.types.converters;
 import java.sql.Date;
 import java.util.Calendar;
 
-import javax.time.calendar.LocalDate;
+import java.time.LocalDate;
 
 /**
- * Class to handle the conversion between javax.time.calendar.LocalDate and java.sql.Date.
+ * Class to handle the conversion between java.time.LocalDate and java.sql.Date.
  */
 public class LocalDateSqlDateConverter implements TypeConverter<LocalDate, Date>
 {
@@ -47,7 +47,7 @@ public class LocalDateSqlDateConverter implements TypeConverter<LocalDate, Date>
             return null;
         }
         Calendar cal = Calendar.getInstance();
-        cal.set(localDate.getYear(), localDate.getMonthOfYear().ordinal(), localDate.getDayOfMonth());
+        cal.set(localDate.getYear(), localDate.getMonth().ordinal(), localDate.getDayOfMonth());
         return new Date(cal.getTimeInMillis());
     }
 }

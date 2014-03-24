@@ -17,10 +17,10 @@ Contributors:
 **********************************************************************/
 package org.datanucleus.store.types.converters;
 
-import javax.time.calendar.LocalDate;
+import java.time.LocalDate;
 
 /**
- * Class to handle the conversion between javax.time.calendar.LocalDate and a String form.
+ * Class to handle the conversion between java.time.LocalDate and a String form.
  */
 public class LocalDateStringConverter implements TypeConverter<LocalDate, String>, ColumnLengthDefiningTypeConverter
 {

@@ -20,10 +20,10 @@ package org.datanucleus.store.types.converters;
 import java.sql.Time;
 import java.util.Calendar;
 
-import javax.time.calendar.LocalTime;
+import java.time.LocalTime;
 
 /**
- * Class to handle the conversion between javax.time.calendar.LocalTime and java.sql.Time.
+ * Class to handle the conversion between java.time.LocalTime and java.sql.Time.
  */
 public class LocalTimeSqlTimeConverter implements TypeConverter<LocalTime, Time>
 {
@@ -46,7 +46,7 @@ public class LocalTimeSqlTimeConverter implements TypeConverter<LocalTime, Time>
             return null;
         }
         Calendar cal = Calendar.getInstance();
-        cal.set(0, 0, 0, time.getHourOfDay(), time.getMinuteOfHour(), time.getSecondOfMinute());
+        cal.set(0, 0, 0, time.getHour(), time.getMinute(), time.getSecond());
         return new Time(cal.getTimeInMillis());
     }
 }

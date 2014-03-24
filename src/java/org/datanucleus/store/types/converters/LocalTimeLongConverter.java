@@ -17,10 +17,10 @@ Contributors:
 **********************************************************************/
 package org.datanucleus.store.types.converters;
 
-import javax.time.calendar.LocalTime;
+import java.time.LocalTime;
 
 /**
- * Class to handle the conversion between javax.time.calendar.LocalTime and a long form (nanos of day).
+ * Class to handle the conversion between java.time.LocalTime and a long form (nanos of day).
  */
 public class LocalTimeLongConverter implements TypeConverter<LocalTime, Long>
 {
@@ -31,7 +31,7 @@ public class LocalTimeLongConverter implements TypeConverter<LocalTime, Long>
             return null;
         }
 
-        return LocalTime.ofNanoOfDay(val).toLocalTime();
+        return LocalTime.ofNanoOfDay(val);
     }
 
     public Long toDatastoreType(LocalTime date)

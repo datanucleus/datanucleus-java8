@@ -24,8 +24,8 @@
 
     <properties>
         <!-- TODO Update to 1.8 when we have a version of m2e that recognises it -->
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <dn.core.version>4.0.0-m2-SNAPSHOT</dn.core.version>
     </properties>
 
@@ -45,12 +45,6 @@
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-core</artifactId>
             <version>[${dn.core.version}, )</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.time</groupId>
-            <artifactId>time-api</artifactId>
-            <version>[0.6, )</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

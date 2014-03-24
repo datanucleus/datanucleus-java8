@@ -20,10 +20,10 @@ package org.datanucleus.store.types.converters;
 import java.sql.Timestamp;
 import java.util.Calendar;
 
-import javax.time.calendar.LocalDateTime;
+import java.time.LocalDateTime;
 
 /**
- * Class to handle the conversion between javax.time.calendar.LocalDateTime and java.sql.Timestamp
+ * Class to handle the conversion between java.time.LocalDateTime and java.sql.Timestamp
  */
 public class LocalDateTimeTimestampConverter implements TypeConverter<LocalDateTime, Timestamp>
 {
@@ -47,8 +47,8 @@ public class LocalDateTimeTimestampConverter implements TypeConverter<LocalDateT
             return null;
         }
         Calendar cal = Calendar.getInstance();
-        cal.set(datetime.getYear(), datetime.getMonthOfYear().ordinal(), datetime.getDayOfMonth(),
-            datetime.getHourOfDay(), datetime.getMinuteOfHour(), datetime.getSecondOfMinute());
+        cal.set(datetime.getYear(), datetime.getMonth().ordinal(), datetime.getDayOfMonth(),
+            datetime.getHour(), datetime.getMinute(), datetime.getSecond());
         return new Timestamp(cal.getTimeInMillis());
     }
 }
