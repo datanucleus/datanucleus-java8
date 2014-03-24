@@ -23,6 +23,7 @@
     </scm>
 
     <properties>
+        <!-- TODO Update to 1.8 when we have a version of m2e that recognises it -->
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <dn.core.version>4.0.0-m2-SNAPSHOT</dn.core.version>
