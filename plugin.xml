@@ -23,6 +23,9 @@ Contributors:
         <java-type name="java.time.LocalDate" dfg="true" embedded="true" converter-name="dn.localdate-sqldate"/>
         <java-type name="java.time.LocalDateTime" dfg="true" embedded="true" converter-name="dn.localdatetime-timestamp"/>
         <java-type name="java.time.LocalTime" dfg="true" embedded="true" converter-name="dn.localtime-sqltime"/>
+        <java-type name="java.time.Year" dfg="true" embedded="true" converter-name="dn.year-integer"/>
+        <java-type name="java.time.YearMonth" dfg="true" embedded="true" converter-name="dn.yearmonth-string"/>
+        <java-type name="java.time.MonthDay" dfg="true" embedded="true" converter-name="dn.monthday-string"/>
     </extension>
 
     <!-- TYPE CONVERTERS -->
@@ -31,15 +34,28 @@ Contributors:
             converter-class="org.datanucleus.store.types.converters.LocalDateStringConverter"/>
         <type-converter name="dn.localdate-sqldate" member-type="java.time.LocalDate" datastore-type="java.sql.Date"
             converter-class="org.datanucleus.store.types.converters.LocalDateSqlDateConverter"/>
+
         <type-converter name="dn.localtime-string" member-type="java.time.LocalTime" datastore-type="java.lang.String"
             converter-class="org.datanucleus.store.types.converters.LocalTimeStringConverter"/>
         <type-converter name="dn.localtime-long" member-type="java.time.LocalTime" datastore-type="java.lang.Long"
             converter-class="org.datanucleus.store.types.converters.LocalTimeLongConverter"/>
         <type-converter name="dn.localtime-sqltime" member-type="java.time.LocalTime" datastore-type="java.sql.Time"
             converter-class="org.datanucleus.store.types.converters.LocalTimeSqlTimeConverter"/>
+
         <type-converter name="dn.localdatetime-string" member-type="java.time.LocalDateTime" datastore-type="java.lang.String"
             converter-class="org.datanucleus.store.types.converters.LocalDateTimeStringConverter"/>
         <type-converter name="dn.localdatetime-timestamp" member-type="java.time.LocalDateTime" datastore-type="java.sql.Timestamp"
             converter-class="org.datanucleus.store.types.converters.LocalDateTimeTimestampConverter"/>
+
+        <type-converter name="dn.year-string" member-type="java.time.Year" datastore-type="java.lang.String"
+            converter-class="org.datanucleus.store.types.converters.YearStringConverter"/>
+        <type-converter name="dn.year-integer" member-type="java.time.Year" datastore-type="java.lang.Integer"
+            converter-class="org.datanucleus.store.types.converters.YearIntegerConverter"/>
+
+        <type-converter name="dn.yearmonth-string" member-type="java.time.YearMonth" datastore-type="java.lang.String"
+            converter-class="org.datanucleus.store.types.converters.YearMonthStringConverter"/>
+
+        <type-converter name="dn.monthday-string" member-type="java.time.MonthDay" datastore-type="java.lang.String"
+            converter-class="org.datanucleus.store.types.converters.MonthDayStringConverter"/>
     </extension>
 </plugin>
