@@ -23,9 +23,14 @@ Contributors:
         <java-type name="java.time.LocalDate" dfg="true" embedded="true" converter-name="dn.localdate-sqldate"/>
         <java-type name="java.time.LocalDateTime" dfg="true" embedded="true" converter-name="dn.localdatetime-timestamp"/>
         <java-type name="java.time.LocalTime" dfg="true" embedded="true" converter-name="dn.localtime-sqltime"/>
+        <java-type name="java.time.Duration" dfg="true" embedded="true" converter-name="dn.duration-long"/>
+        <java-type name="java.time.Instant" dfg="true" embedded="true" converter-name="dn.instant-timestamp"/>
+        <java-type name="java.time.Period" dfg="true" embedded="true" converter-name="dn.period-string"/>
         <java-type name="java.time.Year" dfg="true" embedded="true" converter-name="dn.year-integer"/>
         <java-type name="java.time.YearMonth" dfg="true" embedded="true" converter-name="dn.yearmonth-string"/>
         <java-type name="java.time.MonthDay" dfg="true" embedded="true" converter-name="dn.monthday-string"/>
+        <java-type name="java.time.ZoneId" dfg="true" embedded="true" converter-name="dn.zoneid-string"/>
+        <java-type name="java.time.ZoneOffset" dfg="true" embedded="true" converter-name="dn.zoneoffset-string"/>
     </extension>
 
     <!-- TYPE CONVERTERS -->
@@ -47,6 +52,19 @@ Contributors:
         <type-converter name="dn.localdatetime-timestamp" member-type="java.time.LocalDateTime" datastore-type="java.sql.Timestamp"
             converter-class="org.datanucleus.store.types.converters.LocalDateTimeTimestampConverter"/>
 
+        <type-converter name="dn.duration-string" member-type="java.time.Duration" datastore-type="java.lang.String"
+            converter-class="org.datanucleus.store.types.converters.DurationStringConverter"/>
+        <type-converter name="dn.duration-long" member-type="java.time.Duration" datastore-type="java.lang.Long"
+            converter-class="org.datanucleus.store.types.converters.DurationLongConverter"/>
+
+        <type-converter name="dn.period-string" member-type="java.time.Period" datastore-type="java.lang.String"
+            converter-class="org.datanucleus.store.types.converters.PeriodStringConverter"/>
+
+        <type-converter name="dn.instant-timestamp" member-type="java.time.Instant" datastore-type="java.sql.Timestamp"
+            converter-class="org.datanucleus.store.types.converters.InstantTimestampConverter"/>
+        <type-converter name="dn.instant-string" member-type="java.time.Instant" datastore-type="java.lang.String"
+            converter-class="org.datanucleus.store.types.converters.InstantStringConverter"/>
+
         <type-converter name="dn.year-string" member-type="java.time.Year" datastore-type="java.lang.String"
             converter-class="org.datanucleus.store.types.converters.YearStringConverter"/>
         <type-converter name="dn.year-integer" member-type="java.time.Year" datastore-type="java.lang.Integer"
@@ -57,5 +75,11 @@ Contributors:
 
         <type-converter name="dn.monthday-string" member-type="java.time.MonthDay" datastore-type="java.lang.String"
             converter-class="org.datanucleus.store.types.converters.MonthDayStringConverter"/>
+
+        <type-converter name="dn.zoneid-string" member-type="java.time.ZoneId" datastore-type="java.lang.String"
+            converter-class="org.datanucleus.store.types.converters.ZoneIdStringConverter"/>
+
+        <type-converter name="dn.zoneoffset-string" member-type="java.time.ZoneOffset" datastore-type="java.lang.String"
+            converter-class="org.datanucleus.store.types.converters.ZoneOffsetStringConverter"/>
     </extension>
 </plugin>
