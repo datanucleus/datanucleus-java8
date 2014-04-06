@@ -15,27 +15,40 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
-import java.time.Period;
+import java.time.LocalTime;
+
+import org.datanucleus.store.types.converters.ColumnLengthDefiningTypeConverter;
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
- * Class to handle the conversion between java.time.Period and a String form.
+ * Class to handle the conversion between java.time.LocalTime and a String form.
  */
-public class PeriodStringConverter implements TypeConverter<Period, String>
+public class LocalTimeStringConverter implements TypeConverter<LocalTime, String>, ColumnLengthDefiningTypeConverter
 {
-    public Period toMemberType(String str)
+    public LocalTime toMemberType(String str)
     {
         if (str == null)
         {
             return null;
         }
 
-        return Period.parse(str);
+        return LocalTime.parse(str);
     }
 
-    public String toDatastoreType(Period per)
+    public String toDatastoreType(LocalTime date)
     {
-        return per != null ? per.toString() : null;
+        return date != null ? date.toString() : null;
+    }
+
+    public int getDefaultColumnLength(int columnPosition)
+    {
+        if (columnPosition != 0)
+        {
+            return -1;
+        }
+        // Persist as "hh:mm:ss.SSS" when stored as string
+        return 12;
     }
 }

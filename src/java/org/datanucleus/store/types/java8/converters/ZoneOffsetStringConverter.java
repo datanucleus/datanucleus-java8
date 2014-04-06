@@ -1,5 +1,5 @@
 /**********************************************************************
-Copyright (c) 2012 Andy Jefferson and others. All rights reserved.
+Copyright (c) 2014 Andy Jefferson and others. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -15,27 +15,29 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
-import java.time.Duration;
+import java.time.ZoneOffset;
+
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
- * Class to handle the conversion between java.time.Duration and a String form.
+ * Class to handle the conversion between java.time.ZoneOffset and String.
  */
-public class DurationStringConverter implements TypeConverter<Duration, String>
+public class ZoneOffsetStringConverter implements TypeConverter<ZoneOffset, String>
 {
-    public Duration toMemberType(String str)
+    public ZoneOffset toMemberType(String str)
     {
         if (str == null)
         {
             return null;
         }
 
-        return Duration.parse(str);
+        return ZoneOffset.of(str);
     }
 
-    public String toDatastoreType(Duration dur)
+    public String toDatastoreType(ZoneOffset offset)
     {
-        return dur != null ? dur.toString() : null;
+        return offset != null ? offset.toString() : null;
     }
 }

@@ -15,27 +15,29 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
-import java.time.Duration;
+import java.time.LocalTime;
+
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
- * Class to handle the conversion between java.time.Duration and a Long form.
+ * Class to handle the conversion between java.time.LocalTime and a long form (nanos of day).
  */
-public class DurationLongConverter implements TypeConverter<Duration, Long>
+public class LocalTimeLongConverter implements TypeConverter<LocalTime, Long>
 {
-    public Duration toMemberType(Long val)
+    public LocalTime toMemberType(Long val)
     {
         if (val == null)
         {
             return null;
         }
 
-        return Duration.ofSeconds(val);
+        return LocalTime.ofNanoOfDay(val);
     }
 
-    public Long toDatastoreType(Duration date)
+    public Long toDatastoreType(LocalTime date)
     {
-        return date != null ? date.getSeconds() : null;
+        return date != null ? date.toNanoOfDay() : null;
     }
 }

@@ -15,27 +15,29 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
-import java.time.MonthDay;
+import java.time.ZoneId;
+
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
- * Class to handle the conversion between java.time.MonthDay and String.
+ * Class to handle the conversion between java.time.ZoneId and String.
  */
-public class MonthDayStringConverter implements TypeConverter<MonthDay, String>
+public class ZoneIdStringConverter implements TypeConverter<ZoneId, String>
 {
-    public MonthDay toMemberType(String str)
+    public ZoneId toMemberType(String str)
     {
         if (str == null)
         {
             return null;
         }
 
-        return MonthDay.parse(str);
+        return ZoneId.of(str);
     }
 
-    public String toDatastoreType(MonthDay md)
+    public String toDatastoreType(ZoneId zone)
     {
-        return md != null ? md.toString() : null;
+        return zone != null ? zone.toString() : null;
     }
 }

@@ -15,37 +15,29 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
-import java.time.LocalTime;
+import java.time.Duration;
+
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
- * Class to handle the conversion between java.time.LocalTime and a String form.
+ * Class to handle the conversion between java.time.Duration and a Long form.
  */
-public class LocalTimeStringConverter implements TypeConverter<LocalTime, String>, ColumnLengthDefiningTypeConverter
+public class DurationLongConverter implements TypeConverter<Duration, Long>
 {
-    public LocalTime toMemberType(String str)
+    public Duration toMemberType(Long val)
     {
-        if (str == null)
+        if (val == null)
         {
             return null;
         }
 
-        return LocalTime.parse(str);
+        return Duration.ofSeconds(val);
     }
 
-    public String toDatastoreType(LocalTime date)
+    public Long toDatastoreType(Duration date)
     {
-        return date != null ? date.toString() : null;
-    }
-
-    public int getDefaultColumnLength(int columnPosition)
-    {
-        if (columnPosition != 0)
-        {
-            return -1;
-        }
-        // Persist as "hh:mm:ss.SSS" when stored as string
-        return 12;
+        return date != null ? date.getSeconds() : null;
     }
 }

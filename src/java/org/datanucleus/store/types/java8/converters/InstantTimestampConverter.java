@@ -15,39 +15,34 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
-import java.sql.Date;
-import java.util.Calendar;
+import java.sql.Timestamp;
+import java.time.Instant;
 
-import java.time.LocalDate;
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
- * Class to handle the conversion between java.time.LocalDate and java.sql.Date.
+ * Class to handle the conversion between java.time.Instant and java.sql.Timestamp
  */
-public class LocalDateSqlDateConverter implements TypeConverter<LocalDate, Date>
+public class InstantTimestampConverter implements TypeConverter<Instant, Timestamp>
 {
-    public LocalDate toMemberType(Date date)
+    public Instant toMemberType(Timestamp ts)
     {
-        if (date == null)
+        if (ts == null)
         {
             return null;
         }
 
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(date);
-        LocalDate localDate = LocalDate.of(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+1, cal.get(Calendar.DAY_OF_MONTH));
-        return localDate;
+        return Instant.ofEpochMilli(ts.getTime());
     }
 
-    public Date toDatastoreType(LocalDate localDate)
+    public Timestamp toDatastoreType(Instant inst)
     {
-        if (localDate == null)
+        if (inst == null)
         {
             return null;
         }
-        Calendar cal = Calendar.getInstance();
-        cal.set(localDate.getYear(), localDate.getMonth().ordinal(), localDate.getDayOfMonth());
-        return new Date(cal.getTimeInMillis());
+        return new Timestamp(inst.toEpochMilli());
     }
 }

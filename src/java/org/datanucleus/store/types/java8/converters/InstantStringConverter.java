@@ -15,38 +15,29 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
-import java.time.LocalDate;
+import java.time.Instant;
+
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
- * Class to handle the conversion between java.time.LocalDate and a String form.
+ * Class to handle the conversion between java.time.Instant and a String form.
  */
-public class LocalDateStringConverter implements TypeConverter<LocalDate, String>, ColumnLengthDefiningTypeConverter
+public class InstantStringConverter implements TypeConverter<Instant, String>
 {
-    public LocalDate toMemberType(String str)
+    public Instant toMemberType(String str)
     {
         if (str == null)
         {
             return null;
         }
 
-        return LocalDate.parse(str);
+        return Instant.parse(str);
     }
 
-    public String toDatastoreType(LocalDate date)
+    public String toDatastoreType(Instant inst)
     {
-        return date != null ? date.toString() : null;
-    }
-
-    @Override
-    public int getDefaultColumnLength(int columnPosition)
-    {
-        if (columnPosition != 0)
-        {
-            return -1;
-        }
-        // Persist as "yyyy-MM-dd" when stored as string
-        return 10;
+        return inst != null ? inst.toString() : null;
     }
 }

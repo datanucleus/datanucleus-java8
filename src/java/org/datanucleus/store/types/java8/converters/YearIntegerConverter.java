@@ -15,27 +15,29 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
-import java.time.YearMonth;
+import java.time.Year;
+
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
- * Class to handle the conversion between java.time.YearMonth and String.
+ * Class to handle the conversion between java.time.Year and Integer.
  */
-public class YearMonthStringConverter implements TypeConverter<YearMonth, String>
+public class YearIntegerConverter implements TypeConverter<Year, Integer>
 {
-    public YearMonth toMemberType(String str)
+    public Year toMemberType(Integer val)
     {
-        if (str == null)
+        if (val == null)
         {
             return null;
         }
 
-        return YearMonth.parse(str);
+        return Year.of(val);
     }
 
-    public String toDatastoreType(YearMonth ym)
+    public Integer toDatastoreType(Year year)
     {
-        return ym != null ? ym.toString() : null;
+        return year != null ? year.getValue() : null;
     }
 }

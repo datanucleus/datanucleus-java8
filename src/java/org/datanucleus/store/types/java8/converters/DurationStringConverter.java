@@ -1,5 +1,5 @@
 /**********************************************************************
-Copyright (c) 2014 Andy Jefferson and others. All rights reserved.
+Copyright (c) 2012 Andy Jefferson and others. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -15,27 +15,29 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
-import java.time.Year;
+import java.time.Duration;
+
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
- * Class to handle the conversion between java.time.Year and String.
+ * Class to handle the conversion between java.time.Duration and a String form.
  */
-public class YearStringConverter implements TypeConverter<Year, String>
+public class DurationStringConverter implements TypeConverter<Duration, String>
 {
-    public Year toMemberType(String str)
+    public Duration toMemberType(String str)
     {
         if (str == null)
         {
             return null;
         }
 
-        return Year.parse(str);
+        return Duration.parse(str);
     }
 
-    public String toDatastoreType(Year year)
+    public String toDatastoreType(Duration dur)
     {
-        return year != null ? year.toString() : null;
+        return dur != null ? dur.toString() : null;
     }
 }

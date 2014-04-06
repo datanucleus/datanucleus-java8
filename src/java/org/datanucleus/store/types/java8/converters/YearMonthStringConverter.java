@@ -1,5 +1,5 @@
 /**********************************************************************
-Copyright (c) 2012 Andy Jefferson and others. All rights reserved.
+Copyright (c) 2014 Andy Jefferson and others. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -15,27 +15,29 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
-import java.time.LocalTime;
+import java.time.YearMonth;
+
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
- * Class to handle the conversion between java.time.LocalTime and a long form (nanos of day).
+ * Class to handle the conversion between java.time.YearMonth and String.
  */
-public class LocalTimeLongConverter implements TypeConverter<LocalTime, Long>
+public class YearMonthStringConverter implements TypeConverter<YearMonth, String>
 {
-    public LocalTime toMemberType(Long val)
+    public YearMonth toMemberType(String str)
     {
-        if (val == null)
+        if (str == null)
         {
             return null;
         }
 
-        return LocalTime.ofNanoOfDay(val);
+        return YearMonth.parse(str);
     }
 
-    public Long toDatastoreType(LocalTime date)
+    public String toDatastoreType(YearMonth ym)
     {
-        return date != null ? date.toNanoOfDay() : null;
+        return ym != null ? ym.toString() : null;
     }
 }

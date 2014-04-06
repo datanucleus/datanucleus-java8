@@ -15,36 +15,29 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
-import java.time.YearMonth;
+import java.time.Year;
+
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
- * Class to handle the conversion between java.time.YearMonth and int[] (the year and the month).
+ * Class to handle the conversion between java.time.Year and String.
  */
-public class YearMonthComponentsConverter implements TypeConverter<YearMonth, int[]>, MultiColumnConverter
+public class YearStringConverter implements TypeConverter<Year, String>
 {
-    public YearMonth toMemberType(int[] vals)
+    public Year toMemberType(String str)
     {
-        if (vals == null)
+        if (str == null)
         {
             return null;
         }
 
-        return YearMonth.of(vals[0], vals[1]);
+        return Year.parse(str);
     }
 
-    public int[] toDatastoreType(YearMonth ym)
+    public String toDatastoreType(Year year)
     {
-        if (ym == null)
-        {
-            return null;
-        }
-        return new int[] {ym.getYear(), ym.getMonthValue()};
-    }
-
-    public Class[] getDatastoreColumnTypes()
-    {
-        return new Class[] {int.class, int.class};
+        return year != null ? year.toString() : null;
     }
 }

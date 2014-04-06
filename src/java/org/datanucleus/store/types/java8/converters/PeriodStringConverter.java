@@ -1,5 +1,5 @@
 /**********************************************************************
-Copyright (c) 2014 Andy Jefferson and others. All rights reserved.
+Copyright (c) 2012 Andy Jefferson and others. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -15,27 +15,29 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
-import java.time.Year;
+import java.time.Period;
+
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
- * Class to handle the conversion between java.time.Year and Integer.
+ * Class to handle the conversion between java.time.Period and a String form.
  */
-public class YearIntegerConverter implements TypeConverter<Year, Integer>
+public class PeriodStringConverter implements TypeConverter<Period, String>
 {
-    public Year toMemberType(Integer val)
+    public Period toMemberType(String str)
     {
-        if (val == null)
+        if (str == null)
         {
             return null;
         }
 
-        return Year.of(val);
+        return Period.parse(str);
     }
 
-    public Integer toDatastoreType(Year year)
+    public String toDatastoreType(Period per)
     {
-        return year != null ? year.getValue() : null;
+        return per != null ? per.toString() : null;
     }
 }

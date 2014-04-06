@@ -15,9 +15,12 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
 import java.time.LocalDateTime;
+
+import org.datanucleus.store.types.converters.ColumnLengthDefiningTypeConverter;
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
  * Class to handle the conversion between java.time.LocalDateTime and a String form.

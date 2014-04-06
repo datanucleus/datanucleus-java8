@@ -15,40 +15,39 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
-import java.sql.Timestamp;
+import java.sql.Time;
 import java.util.Calendar;
+import java.time.LocalTime;
 
-import java.time.LocalDateTime;
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
- * Class to handle the conversion between java.time.LocalDateTime and java.sql.Timestamp
+ * Class to handle the conversion between java.time.LocalTime and java.sql.Time.
  */
-public class LocalDateTimeTimestampConverter implements TypeConverter<LocalDateTime, Timestamp>
+public class LocalTimeSqlTimeConverter implements TypeConverter<LocalTime, Time>
 {
-    public LocalDateTime toMemberType(Timestamp ts)
+    public LocalTime toMemberType(Time time)
     {
-        if (ts == null)
+        if (time == null)
         {
             return null;
         }
 
         Calendar cal = Calendar.getInstance();
-        cal.setTime(ts);
-        return LocalDateTime.of(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+1, cal.get(Calendar.DAY_OF_MONTH),
-            cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), cal.get(Calendar.SECOND), cal.get(Calendar.MILLISECOND)*1000000);
+        cal.setTime(time);
+        return LocalTime.of(cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), cal.get(Calendar.SECOND), cal.get(Calendar.MILLISECOND)*1000000);
     }
 
-    public Timestamp toDatastoreType(LocalDateTime datetime)
+    public Time toDatastoreType(LocalTime time)
     {
-        if (datetime == null)
+        if (time == null)
         {
             return null;
         }
         Calendar cal = Calendar.getInstance();
-        cal.set(datetime.getYear(), datetime.getMonth().ordinal(), datetime.getDayOfMonth(),
-            datetime.getHour(), datetime.getMinute(), datetime.getSecond());
-        return new Timestamp(cal.getTimeInMillis());
+        cal.set(0, 0, 0, time.getHour(), time.getMinute(), time.getSecond());
+        return new Time(cal.getTimeInMillis());
     }
 }

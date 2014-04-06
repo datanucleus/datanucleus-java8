@@ -15,38 +15,40 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
-import java.sql.Time;
+import java.sql.Date;
 import java.util.Calendar;
+import java.time.LocalDate;
 
-import java.time.LocalTime;
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
- * Class to handle the conversion between java.time.LocalTime and java.sql.Time.
+ * Class to handle the conversion between java.time.LocalDate and java.sql.Date.
  */
-public class LocalTimeSqlTimeConverter implements TypeConverter<LocalTime, Time>
+public class LocalDateSqlDateConverter implements TypeConverter<LocalDate, Date>
 {
-    public LocalTime toMemberType(Time time)
+    public LocalDate toMemberType(Date date)
     {
-        if (time == null)
+        if (date == null)
         {
             return null;
         }
 
         Calendar cal = Calendar.getInstance();
-        cal.setTime(time);
-        return LocalTime.of(cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), cal.get(Calendar.SECOND), cal.get(Calendar.MILLISECOND)*1000000);
+        cal.setTime(date);
+        LocalDate localDate = LocalDate.of(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+1, cal.get(Calendar.DAY_OF_MONTH));
+        return localDate;
     }
 
-    public Time toDatastoreType(LocalTime time)
+    public Date toDatastoreType(LocalDate localDate)
     {
-        if (time == null)
+        if (localDate == null)
         {
             return null;
         }
         Calendar cal = Calendar.getInstance();
-        cal.set(0, 0, 0, time.getHour(), time.getMinute(), time.getSecond());
-        return new Time(cal.getTimeInMillis());
+        cal.set(localDate.getYear(), localDate.getMonth().ordinal(), localDate.getDayOfMonth());
+        return new Date(cal.getTimeInMillis());
     }
 }

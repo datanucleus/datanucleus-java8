@@ -15,9 +15,12 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
 import java.time.MonthDay;
+
+import org.datanucleus.store.types.converters.MultiColumnConverter;
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
  * Class to handle the conversion between java.time.MonthDay and int[] (the month and the day).

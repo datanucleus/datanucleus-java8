@@ -15,27 +15,39 @@ limitations under the License.
 Contributors:
     ...
 **********************************************************************/
-package org.datanucleus.store.types.converters;
+package org.datanucleus.store.types.java8.converters;
 
-import java.time.ZoneId;
+import java.time.YearMonth;
+
+import org.datanucleus.store.types.converters.MultiColumnConverter;
+import org.datanucleus.store.types.converters.TypeConverter;
 
 /**
- * Class to handle the conversion between java.time.ZoneId and String.
+ * Class to handle the conversion between java.time.YearMonth and int[] (the year and the month).
  */
-public class ZoneIdStringConverter implements TypeConverter<ZoneId, String>
+public class YearMonthComponentsConverter implements TypeConverter<YearMonth, int[]>, MultiColumnConverter
 {
-    public ZoneId toMemberType(String str)
+    public YearMonth toMemberType(int[] vals)
     {
-        if (str == null)
+        if (vals == null)
         {
             return null;
         }
 
-        return ZoneId.of(str);
+        return YearMonth.of(vals[0], vals[1]);
     }
 
-    public String toDatastoreType(ZoneId zone)
+    public int[] toDatastoreType(YearMonth ym)
     {
-        return zone != null ? zone.toString() : null;
+        if (ym == null)
+        {
+            return null;
+        }
+        return new int[] {ym.getYear(), ym.getMonthValue()};
+    }
+
+    public Class[] getDatastoreColumnTypes()
+    {
+        return new Class[] {int.class, int.class};
     }
 }
