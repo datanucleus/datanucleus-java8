@@ -26,6 +26,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <dn.core.version>4.0.0-m2</dn.core.version>
+        <dn.rdbms.version>4.0.0-m2</dn.rdbms.version>
     </properties>
 
     <repositories>
@@ -44,6 +45,13 @@
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-core</artifactId>
             <version>[${dn.core.version}, )</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-rdbms</artifactId>
+            <version>[${dn.rdbms.version}, )</version>
+            <optional>true</optional>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -67,6 +75,7 @@
                     <instructions>
                         <Bundle-SymbolicName>org.datanucleus.store.types.java8;singleton:=true</Bundle-SymbolicName>
                         <Import-Package>
+                            org.datanucleus.store.rdbms*;version="${dn.rdbms.version}",
                             org.datanucleus*;version="${dn.core.version}",
                             *;resolution:=optional
                         </Import-Package>

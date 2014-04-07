@@ -17,7 +17,7 @@ Contributors:
 **********************************************************************/
 package org.datanucleus.store.types.java8.query.inmemory;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.datanucleus.exceptions.NucleusException;
 import org.datanucleus.query.expression.InvokeExpression;
@@ -25,9 +25,9 @@ import org.datanucleus.query.inmemory.InMemoryExpressionEvaluator;
 import org.datanucleus.query.inmemory.InvocationEvaluator;
 
 /**
- * Evaluator for the method "{localDateExpr}.getMonth()".
+ * Evaluator for the method "{localDateTimeExpr}.getMonthValue()".
  */
-public class LocalDateGetMonth implements InvocationEvaluator
+public class LocalDateTimeGetMonthValue implements InvocationEvaluator
 {
     /* (non-Javadoc)
      * @see org.datanucleus.query.evaluator.memory.InvocationEvaluator#evaluate(org.datanucleus.query.expression.InvokeExpression, org.datanucleus.query.evaluator.memory.InMemoryExpressionEvaluator)
@@ -40,11 +40,11 @@ public class LocalDateGetMonth implements InvocationEvaluator
         {
             return 0;
         }
-        if (!(invokedValue instanceof LocalDate))
+        if (!(invokedValue instanceof LocalDateTime))
         {
             throw new NucleusException(eval.getLocaliser().msg("021011", method, invokedValue.getClass().getName()));
         }
 
-        return ((LocalDate)invokedValue).getMonth();
+        return ((LocalDateTime)invokedValue).getMonthValue();
     }
 }
