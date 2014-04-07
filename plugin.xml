@@ -86,4 +86,34 @@ Contributors:
         <type-converter name="dn.zoneoffset-string" member-type="java.time.ZoneOffset" datastore-type="java.lang.String"
             converter-class="org.datanucleus.store.types.java8.converters.ZoneOffsetStringConverter"/>
     </extension>
+
+    <!-- QUERY METHODS (IN-MEMORY) -->
+    <extension point="org.datanucleus.query_method_evaluators">
+        <query-method-evaluator class="java.time.LocalDate" method="getDayOfMonth"
+            evaluator="org.datanucleus.store.types.java8.query.inmemory.LocalDateGetDayOfMonth"/>
+        <query-method-evaluator class="java.time.LocalDate" method="getMonth" 
+            evaluator="org.datanucleus.store.types.java8.query.inmemory.LocalDateGetMonth"/>
+        <query-method-evaluator class="java.time.LocalDate" method="getYear"
+            evaluator="org.datanucleus.store.types.java8.query.inmemory.LocalDateGetYear"/>
+
+        <query-method-evaluator class="java.time.LocalTime" method="getHour"
+            evaluator="org.datanucleus.store.types.java8.query.inmemory.LocalTimeGetHour"/>
+        <query-method-evaluator class="java.time.LocalTime" method="getMinute" 
+            evaluator="org.datanucleus.store.types.java8.query.inmemory.LocalTimeGetMinute"/>
+        <query-method-evaluator class="java.time.LocalTime" method="getSecond"
+            evaluator="org.datanucleus.store.types.java8.query.inmemory.LocalTimeGetSecond"/>
+
+        <query-method-evaluator class="java.time.LocalDateTime" method="getDayOfMonth"
+            evaluator="org.datanucleus.store.types.java8.query.inmemory.LocalDateTimeGetDayOfMonth"/>
+        <query-method-evaluator class="java.time.LocalDateTime" method="getMonth" 
+            evaluator="org.datanucleus.store.types.java8.query.inmemory.LocalDateTimeGetMonth"/>
+        <query-method-evaluator class="java.time.LocalDateTime" method="getYear"
+            evaluator="org.datanucleus.store.types.java8.query.inmemory.LocalDateTimeGetYear"/>
+        <query-method-evaluator class="java.time.LocalDateTime" method="getHour"
+            evaluator="org.datanucleus.store.types.java8.query.inmemory.LocalDateTimeGetHour"/>
+        <query-method-evaluator class="java.time.LocalDateTime" method="getMinute" 
+            evaluator="org.datanucleus.store.types.java8.query.inmemory.LocalDateTimeGetMinute"/>
+        <query-method-evaluator class="java.time.LocalDateTime" method="getSecond"
+            evaluator="org.datanucleus.store.types.java8.query.inmemory.LocalDateTimeGetSecond"/>
+    </extension>
 </plugin>
