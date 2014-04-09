@@ -75,7 +75,7 @@
                     <instructions>
                         <Bundle-SymbolicName>org.datanucleus.store.types.java8;singleton:=true</Bundle-SymbolicName>
                         <Import-Package>
-                            org.datanucleus.store.rdbms*;version="${dn.rdbms.version}",
+                            org.datanucleus.store.rdbms*;version="${dn.rdbms.version}";resolution:=optional,
                             org.datanucleus*;version="${dn.core.version}",
                             *;resolution:=optional
                         </Import-Package>
