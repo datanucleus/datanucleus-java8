@@ -39,6 +39,8 @@ Contributors:
             converter-class="org.datanucleus.store.types.java8.converters.LocalDateStringConverter"/>
         <type-converter name="dn.localdate-sqldate" member-type="java.time.LocalDate" datastore-type="java.sql.Date"
             converter-class="org.datanucleus.store.types.java8.converters.LocalDateSqlDateConverter"/>
+        <type-converter name="dn.localdate-date" member-type="java.time.LocalDate" datastore-type="java.util.Date"
+            converter-class="org.datanucleus.store.types.java8.converters.LocalDateDateConverter"/>
 
         <type-converter name="dn.localtime-string" member-type="java.time.LocalTime" datastore-type="java.lang.String"
             converter-class="org.datanucleus.store.types.java8.converters.LocalTimeStringConverter"/>
@@ -46,11 +48,15 @@ Contributors:
             converter-class="org.datanucleus.store.types.java8.converters.LocalTimeLongConverter"/>
         <type-converter name="dn.localtime-sqltime" member-type="java.time.LocalTime" datastore-type="java.sql.Time"
             converter-class="org.datanucleus.store.types.java8.converters.LocalTimeSqlTimeConverter"/>
+        <type-converter name="dn.localtime-date" member-type="java.time.LocalTime" datastore-type="java.util.Date"
+            converter-class="org.datanucleus.store.types.java8.converters.LocalTimeDateConverter"/>
 
         <type-converter name="dn.localdatetime-string" member-type="java.time.LocalDateTime" datastore-type="java.lang.String"
             converter-class="org.datanucleus.store.types.java8.converters.LocalDateTimeStringConverter"/>
         <type-converter name="dn.localdatetime-timestamp" member-type="java.time.LocalDateTime" datastore-type="java.sql.Timestamp"
             converter-class="org.datanucleus.store.types.java8.converters.LocalDateTimeTimestampConverter"/>
+        <type-converter name="dn.localdatetime-date" member-type="java.time.LocalDateTime" datastore-type="java.util.Date"
+            converter-class="org.datanucleus.store.types.java8.converters.LocalDateTimeDateConverter"/>
 
         <type-converter name="dn.duration-string" member-type="java.time.Duration" datastore-type="java.lang.String"
             converter-class="org.datanucleus.store.types.java8.converters.DurationStringConverter"/>
