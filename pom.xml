@@ -29,17 +29,6 @@
         <dn.rdbms.version>4.0.0-m3</dn.rdbms.version>
     </properties>
 
-    <repositories>
-        <!-- For any artifacts that aren't present in Maven Central -->
-        <repository>
-            <id>DN_M2_Repo</id>
-            <url>http://www.datanucleus.org/downloads/maven2/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
     <dependencies>
         <dependency>
             <groupId>org.datanucleus</groupId>
