@@ -70,6 +70,8 @@ Contributors:
             converter-class="org.datanucleus.store.types.java8.converters.InstantTimestampConverter"/>
         <type-converter name="dn.instant-string" member-type="java.time.Instant" datastore-type="java.lang.String"
             converter-class="org.datanucleus.store.types.java8.converters.InstantStringConverter"/>
+        <type-converter name="dn.instant-long" member-type="java.time.Instant" datastore-type="java.util.Long"
+            converter-class="org.datanucleus.store.types.java8.converters.InstantLongConverter"/>
 
         <type-converter name="dn.year-string" member-type="java.time.Year" datastore-type="java.lang.String"
             converter-class="org.datanucleus.store.types.java8.converters.YearStringConverter"/>
