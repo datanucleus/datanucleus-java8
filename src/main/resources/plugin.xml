@@ -23,6 +23,8 @@ Contributors:
         <java-type name="java.time.LocalDate" dfg="true" embedded="true" converter-name="dn.localdate-sqldate"/>
         <java-type name="java.time.LocalDateTime" dfg="true" embedded="true" converter-name="dn.localdatetime-timestamp"/>
         <java-type name="java.time.LocalTime" dfg="true" embedded="true" converter-name="dn.localtime-sqltime"/>
+        <java-type name="java.time.OffsetTime" dfg="true" embedded="true" converter-name="dn.offsettime-sqltime"/>
+        <java-type name="java.time.OffsetDateTime" dfg="true" embedded="true" converter-name="dn.offsetdatetime-timestamp"/>
         <java-type name="java.time.Duration" dfg="true" embedded="true" converter-name="dn.duration-long"/>
         <java-type name="java.time.Instant" dfg="true" embedded="true" converter-name="dn.instant-timestamp"/>
         <java-type name="java.time.Period" dfg="true" embedded="true" converter-name="dn.period-string"/>
@@ -57,6 +59,20 @@ Contributors:
             converter-class="org.datanucleus.store.types.java8.converters.LocalDateTimeTimestampConverter"/>
         <type-converter name="dn.localdatetime-date" member-type="java.time.LocalDateTime" datastore-type="java.util.Date"
             converter-class="org.datanucleus.store.types.java8.converters.LocalDateTimeDateConverter"/>
+
+        <type-converter name="dn.offsettime-string" member-type="java.time.OffsetTime" datastore-type="java.lang.String"
+            converter-class="org.datanucleus.store.types.java8.converters.OffsetTimeStringConverter"/>
+        <type-converter name="dn.offsettime-long" member-type="java.time.OffsetTime" datastore-type="java.lang.Long"
+            converter-class="org.datanucleus.store.types.java8.converters.OffsetTimeLongConverter"/>
+        <type-converter name="dn.offsettime-sqltime" member-type="java.time.OffsetTime" datastore-type="java.sql.Time"
+            converter-class="org.datanucleus.store.types.java8.converters.OffsetTimeSqlTimeConverter"/>
+
+        <type-converter name="dn.offsetdatetime-string" member-type="java.time.OffsetDateTime" datastore-type="java.lang.String"
+            converter-class="org.datanucleus.store.types.java8.converters.OffsetDateTimeStringConverter"/>
+        <type-converter name="dn.offsetdatetime-timestamp" member-type="java.time.OffsetDateTime" datastore-type="java.sql.Timestamp"
+            converter-class="org.datanucleus.store.types.java8.converters.OffsetDateTimeTimestampConverter"/>
+        <type-converter name="dn.offsetdatetime-date" member-type="java.time.OffsetDateTime" datastore-type="java.util.Date"
+            converter-class="org.datanucleus.store.types.java8.converters.OffsetDateTimeDateConverter"/>
 
         <type-converter name="dn.duration-string" member-type="java.time.Duration" datastore-type="java.lang.String"
             converter-class="org.datanucleus.store.types.java8.converters.DurationStringConverter"/>
