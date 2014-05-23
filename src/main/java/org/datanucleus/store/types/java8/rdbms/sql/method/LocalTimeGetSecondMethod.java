@@ -26,6 +26,7 @@ import org.datanucleus.store.rdbms.sql.expression.SQLExpression;
 import org.datanucleus.store.rdbms.sql.expression.TemporalExpression;
 import org.datanucleus.store.rdbms.sql.expression.TypeConverterExpression;
 import org.datanucleus.store.rdbms.sql.method.AbstractSQLMethod;
+import org.datanucleus.util.Localiser;
 
 /**
  * Method for evaluating {localtimeExpr}.getSecond().
@@ -40,7 +41,7 @@ public class LocalTimeGetSecondMethod extends AbstractSQLMethod
     {
         if (!(expr instanceof TypeConverterExpression) || !(((TypeConverterExpression)expr).getDelegate() instanceof TemporalExpression))
         {
-            throw new NucleusException(LOCALISER.msg("060001", "getSecond()", expr));
+            throw new NucleusException(Localiser.msg("060001", "getSecond()", expr));
         }
 
         ArrayList funcArgs = new ArrayList();

@@ -23,6 +23,7 @@ import org.datanucleus.exceptions.NucleusException;
 import org.datanucleus.query.expression.InvokeExpression;
 import org.datanucleus.query.inmemory.InMemoryExpressionEvaluator;
 import org.datanucleus.query.inmemory.InvocationEvaluator;
+import org.datanucleus.util.Localiser;
 
 /**
  * Evaluator for the method "{localTimeExpr}.getSecond()".
@@ -42,7 +43,7 @@ public class LocalTimeGetSecond implements InvocationEvaluator
         }
         if (!(invokedValue instanceof LocalTime))
         {
-            throw new NucleusException(eval.getLocaliser().msg("021011", method, invokedValue.getClass().getName()));
+            throw new NucleusException(Localiser.msg("021011", method, invokedValue.getClass().getName()));
         }
 
         return ((LocalTime)invokedValue).getSecond();

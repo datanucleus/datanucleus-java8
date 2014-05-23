@@ -23,6 +23,7 @@ import org.datanucleus.exceptions.NucleusException;
 import org.datanucleus.query.expression.InvokeExpression;
 import org.datanucleus.query.inmemory.InMemoryExpressionEvaluator;
 import org.datanucleus.query.inmemory.InvocationEvaluator;
+import org.datanucleus.util.Localiser;
 
 /**
  * Evaluator for the method "{localDateTimeExpr}.getDayOfMonth()".
@@ -42,7 +43,7 @@ public class LocalDateTimeGetDayOfMonth implements InvocationEvaluator
         }
         if (!(invokedValue instanceof LocalDateTime))
         {
-            throw new NucleusException(eval.getLocaliser().msg("021011", method, invokedValue.getClass().getName()));
+            throw new NucleusException(Localiser.msg("021011", method, invokedValue.getClass().getName()));
         }
 
         return ((LocalDateTime)invokedValue).getDayOfMonth();

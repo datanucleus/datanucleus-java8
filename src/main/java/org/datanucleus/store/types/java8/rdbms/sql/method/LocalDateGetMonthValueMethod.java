@@ -26,6 +26,7 @@ import org.datanucleus.store.rdbms.sql.expression.SQLExpression;
 import org.datanucleus.store.rdbms.sql.expression.TemporalExpression;
 import org.datanucleus.store.rdbms.sql.expression.TypeConverterExpression;
 import org.datanucleus.store.rdbms.sql.method.AbstractSQLMethod;
+import org.datanucleus.util.Localiser;
 
 /**
  * Method for evaluating {localdateExpr}.getMonthValue().
@@ -40,7 +41,7 @@ public class LocalDateGetMonthValueMethod extends AbstractSQLMethod
     {
         if (!(expr instanceof TypeConverterExpression) || !(((TypeConverterExpression)expr).getDelegate() instanceof TemporalExpression))
         {
-            throw new NucleusException(LOCALISER.msg("060001", "getMonth()", expr));
+            throw new NucleusException(Localiser.msg("060001", "getMonth()", expr));
         }
 
         ArrayList funcArgs = new ArrayList();

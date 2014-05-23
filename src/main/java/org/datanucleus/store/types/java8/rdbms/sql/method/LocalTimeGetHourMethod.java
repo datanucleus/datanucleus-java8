@@ -26,6 +26,7 @@ import org.datanucleus.store.rdbms.sql.expression.SQLExpression;
 import org.datanucleus.store.rdbms.sql.expression.TemporalExpression;
 import org.datanucleus.store.rdbms.sql.expression.TypeConverterExpression;
 import org.datanucleus.store.rdbms.sql.method.AbstractSQLMethod;
+import org.datanucleus.util.Localiser;
 
 /**
  * Method for evaluating {localtimeExpr}.getHour().
@@ -40,7 +41,7 @@ public class LocalTimeGetHourMethod extends AbstractSQLMethod
     {
         if (!(expr instanceof TypeConverterExpression) || !(((TypeConverterExpression)expr).getDelegate() instanceof TemporalExpression))
         {
-            throw new NucleusException(LOCALISER.msg("060001", "getHour", expr));
+            throw new NucleusException(Localiser.msg("060001", "getHour", expr));
         }
 
         ArrayList funcArgs = new ArrayList();
