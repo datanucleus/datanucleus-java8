@@ -26,7 +26,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <dn.core.version>4.0.0-m4</dn.core.version>
-        <dn.rdbms.version>4.0.0-m3</dn.rdbms.version>
+        <dn.rdbms.version>4.0.0-m4</dn.rdbms.version>
     </properties>
 
     <dependencies>
