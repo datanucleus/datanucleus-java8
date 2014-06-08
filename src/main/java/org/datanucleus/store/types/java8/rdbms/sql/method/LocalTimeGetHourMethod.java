@@ -44,7 +44,7 @@ public class LocalTimeGetHourMethod extends AbstractSQLMethod
             throw new NucleusException(Localiser.msg("060001", "getHour", expr));
         }
 
-        ArrayList funcArgs = new ArrayList();
+        List funcArgs = new ArrayList();
         funcArgs.add(expr);
         return new NumericExpression(stmt, getMappingForClass(int.class), "HOUR", funcArgs);
     }

@@ -50,7 +50,7 @@ public class LocalTimeGetHour3Method extends AbstractSQLMethod
         JavaTypeMapping mapping = storeMgr.getMappingManager().getMapping(String.class);
         SQLExpression hh = exprFactory.newLiteral(stmt, mapping, "hour");
 
-        ArrayList funcArgs = new ArrayList();
+        List funcArgs = new ArrayList();
         funcArgs.add(hh);
         funcArgs.add(expr);
         return new NumericExpression(stmt, getMappingForClass(int.class), "date_part", funcArgs);

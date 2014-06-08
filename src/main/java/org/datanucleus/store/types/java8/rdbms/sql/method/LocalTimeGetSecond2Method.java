@@ -51,10 +51,10 @@ public class LocalTimeGetSecond2Method extends AbstractSQLMethod
         JavaTypeMapping mapping = storeMgr.getMappingManager().getMapping(String.class);
         SQLExpression hh = exprFactory.newLiteral(stmt, mapping, "SS");
 
-        ArrayList funcArgs = new ArrayList();
+        List funcArgs = new ArrayList(2);
         funcArgs.add(expr);
         funcArgs.add(hh);
-        ArrayList funcArgs2 = new ArrayList();
+        List funcArgs2 = new ArrayList(1);
         funcArgs2.add(new StringExpression(stmt, mapping, "TO_CHAR", funcArgs));
         return new NumericExpression(stmt, getMappingForClass(int.class), "TO_NUMBER", funcArgs2);
     }

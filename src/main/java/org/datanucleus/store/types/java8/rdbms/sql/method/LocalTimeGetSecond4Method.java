@@ -52,7 +52,7 @@ public class LocalTimeGetSecond4Method extends AbstractSQLMethod
         SQLExpression ss = exprFactory.newLiteral(stmt, mapping, "ss");
         ((StringLiteral)ss).generateStatementWithoutQuotes();
 
-        ArrayList funcArgs = new ArrayList();
+        List funcArgs = new ArrayList(2);
         funcArgs.add(ss);
         funcArgs.add(expr);
         return new NumericExpression(stmt, getMappingForClass(int.class), "DATEPART", funcArgs);

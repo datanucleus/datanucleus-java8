@@ -50,7 +50,7 @@ public class LocalTimeGetSecond3Method extends AbstractSQLMethod
         JavaTypeMapping mapping = storeMgr.getMappingManager().getMapping(String.class);
         SQLExpression day = exprFactory.newLiteral(stmt, mapping, "second");
 
-        ArrayList funcArgs = new ArrayList();
+        List funcArgs = new ArrayList(2);
         funcArgs.add(day);
         funcArgs.add(expr);
         return new NumericExpression(stmt, getMappingForClass(int.class), "date_part", funcArgs);

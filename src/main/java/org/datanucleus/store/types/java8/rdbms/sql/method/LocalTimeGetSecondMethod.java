@@ -44,7 +44,7 @@ public class LocalTimeGetSecondMethod extends AbstractSQLMethod
             throw new NucleusException(Localiser.msg("060001", "getSecond()", expr));
         }
 
-        ArrayList funcArgs = new ArrayList();
+        List funcArgs = new ArrayList(1);
         funcArgs.add(expr);
         return new NumericExpression(stmt, getMappingForClass(int.class), "SECOND", funcArgs);
     }

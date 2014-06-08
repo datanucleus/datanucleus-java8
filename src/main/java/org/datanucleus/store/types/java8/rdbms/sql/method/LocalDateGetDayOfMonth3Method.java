@@ -50,7 +50,7 @@ public class LocalDateGetDayOfMonth3Method extends AbstractSQLMethod
         JavaTypeMapping mapping = storeMgr.getMappingManager().getMapping(String.class);
         SQLExpression day = exprFactory.newLiteral(stmt, mapping, "day");
 
-        ArrayList funcArgs = new ArrayList();
+        List funcArgs = new ArrayList();
         funcArgs.add(day);
         funcArgs.add(expr);
         return new NumericExpression(stmt, getMappingForClass(int.class), "date_part", funcArgs);

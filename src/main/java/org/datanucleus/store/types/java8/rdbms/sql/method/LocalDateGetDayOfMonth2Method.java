@@ -51,10 +51,10 @@ public class LocalDateGetDayOfMonth2Method extends AbstractSQLMethod
         JavaTypeMapping mapping = storeMgr.getMappingManager().getMapping(String.class);
         SQLExpression dd = exprFactory.newLiteral(stmt, mapping, "DD");
 
-        ArrayList funcArgs = new ArrayList();
+        List funcArgs = new ArrayList();
         funcArgs.add(expr);
         funcArgs.add(dd);
-        ArrayList funcArgs2 = new ArrayList();
+        List funcArgs2 = new ArrayList();
         funcArgs2.add(new StringExpression(stmt, mapping, "TO_CHAR", funcArgs));
         return new NumericExpression(stmt, getMappingForClass(int.class), "TO_NUMBER", funcArgs2);
     }

@@ -52,7 +52,7 @@ public class LocalTimeGetHour4Method extends AbstractSQLMethod
         SQLExpression hh = exprFactory.newLiteral(stmt, mapping, "hh");
         ((StringLiteral)hh).generateStatementWithoutQuotes();
 
-        ArrayList funcArgs = new ArrayList();
+        List funcArgs = new ArrayList();
         funcArgs.add(hh);
         funcArgs.add(expr);
         return new NumericExpression(stmt, getMappingForClass(int.class), "DATEPART", funcArgs);

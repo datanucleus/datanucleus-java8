@@ -52,7 +52,7 @@ public class LocalTimeGetMinute4Method extends AbstractSQLMethod
         SQLExpression mi = exprFactory.newLiteral(stmt, mapping, "mi");
         ((StringLiteral)mi).generateStatementWithoutQuotes();
 
-        ArrayList funcArgs = new ArrayList();
+        List funcArgs = new ArrayList();
         funcArgs.add(mi);
         funcArgs.add(expr);
         return new NumericExpression(stmt, getMappingForClass(int.class), "DATEPART", funcArgs);
