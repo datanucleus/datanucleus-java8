@@ -27,6 +27,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class MonthDayComponentsConverter implements TypeConverter<MonthDay, int[]>, MultiColumnConverter
 {
+    private static final long serialVersionUID = 8265858752748293491L;
+
     public MonthDay toMemberType(int[] vals)
     {
         if (vals == null)

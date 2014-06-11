@@ -26,6 +26,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class PeriodStringConverter implements TypeConverter<Period, String>
 {
+    private static final long serialVersionUID = 8975950103469192914L;
+
     public Period toMemberType(String str)
     {
         if (str == null)

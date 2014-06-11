@@ -28,6 +28,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class OffsetDateTimeTimestampConverter implements TypeConverter<OffsetDateTime, Timestamp>
 {
+    private static final long serialVersionUID = 1020419574496380608L;
+
     public OffsetDateTime toMemberType(Timestamp ts)
     {
         if (ts == null)

@@ -26,6 +26,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class ZoneOffsetStringConverter implements TypeConverter<ZoneOffset, String>
 {
+    private static final long serialVersionUID = -6314756576149793428L;
+
     public ZoneOffset toMemberType(String str)
     {
         if (str == null)

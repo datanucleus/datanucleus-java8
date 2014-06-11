@@ -27,6 +27,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class OffsetTimeLongConverter implements TypeConverter<OffsetTime, Long>
 {
+    private static final long serialVersionUID = 7502678558541569308L;
+
     public OffsetTime toMemberType(Long val)
     {
         if (val == null)

@@ -26,6 +26,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class YearIntegerConverter implements TypeConverter<Year, Integer>
 {
+    private static final long serialVersionUID = -975145761836531481L;
+
     public Year toMemberType(Integer val)
     {
         if (val == null)

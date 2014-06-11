@@ -28,6 +28,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class OffsetTimeSqlTimeConverter implements TypeConverter<OffsetTime, Time>
 {
+    private static final long serialVersionUID = 3340435954686655963L;
+
     public OffsetTime toMemberType(Time time)
     {
         if (time == null)

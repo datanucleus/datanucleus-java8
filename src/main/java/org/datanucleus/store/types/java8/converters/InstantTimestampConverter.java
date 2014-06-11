@@ -27,6 +27,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class InstantTimestampConverter implements TypeConverter<Instant, Timestamp>
 {
+    private static final long serialVersionUID = 1012730202932240062L;
+
     public Instant toMemberType(Timestamp ts)
     {
         if (ts == null)

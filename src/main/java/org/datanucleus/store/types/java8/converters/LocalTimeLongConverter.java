@@ -26,6 +26,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class LocalTimeLongConverter implements TypeConverter<LocalTime, Long>
 {
+    private static final long serialVersionUID = -4766554255190425880L;
+
     public LocalTime toMemberType(Long val)
     {
         if (val == null)

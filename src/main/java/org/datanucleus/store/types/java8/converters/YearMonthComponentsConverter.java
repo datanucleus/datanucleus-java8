@@ -27,6 +27,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class YearMonthComponentsConverter implements TypeConverter<YearMonth, int[]>, MultiColumnConverter
 {
+    private static final long serialVersionUID = 375516277263118399L;
+
     public YearMonth toMemberType(int[] vals)
     {
         if (vals == null)

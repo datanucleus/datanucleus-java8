@@ -27,6 +27,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class LocalDateStringConverter implements TypeConverter<LocalDate, String>, ColumnLengthDefiningTypeConverter
 {
+    private static final long serialVersionUID = 3884056834450290793L;
+
     public LocalDate toMemberType(String str)
     {
         if (str == null)

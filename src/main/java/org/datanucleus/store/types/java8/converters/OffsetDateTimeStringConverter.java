@@ -27,6 +27,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class OffsetDateTimeStringConverter implements TypeConverter<OffsetDateTime, String>, ColumnLengthDefiningTypeConverter
 {
+    private static final long serialVersionUID = -2300431146181867887L;
+
     public OffsetDateTime toMemberType(String str)
     {
         if (str == null)

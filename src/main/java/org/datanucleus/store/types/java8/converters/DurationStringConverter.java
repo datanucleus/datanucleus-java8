@@ -26,6 +26,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class DurationStringConverter implements TypeConverter<Duration, String>
 {
+    private static final long serialVersionUID = -7438116766732450791L;
+
     public Duration toMemberType(String str)
     {
         if (str == null)

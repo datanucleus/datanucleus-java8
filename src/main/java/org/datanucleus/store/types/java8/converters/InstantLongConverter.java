@@ -26,6 +26,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class InstantLongConverter implements TypeConverter<Instant, Long>
 {
+    private static final long serialVersionUID = -5582036749563342638L;
+
     public Instant toMemberType(Long ms)
     {
         if (ms == null)

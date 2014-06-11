@@ -28,6 +28,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class LocalTimeSqlTimeConverter implements TypeConverter<LocalTime, Time>
 {
+    private static final long serialVersionUID = -792979141879966844L;
+
     public LocalTime toMemberType(Time time)
     {
         if (time == null)

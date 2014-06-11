@@ -26,6 +26,8 @@ import org.datanucleus.store.types.converters.TypeConverter;
  */
 public class MonthDayStringConverter implements TypeConverter<MonthDay, String>
 {
+    private static final long serialVersionUID = 8087124973147837116L;
+
     public MonthDay toMemberType(String str)
     {
         if (str == null)
