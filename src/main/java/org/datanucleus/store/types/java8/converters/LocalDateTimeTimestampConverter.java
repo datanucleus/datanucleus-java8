@@ -52,6 +52,7 @@ public class LocalDateTimeTimestampConverter implements TypeConverter<LocalDateT
         Calendar cal = Calendar.getInstance();
         cal.set(datetime.getYear(), datetime.getMonth().ordinal(), datetime.getDayOfMonth(),
             datetime.getHour(), datetime.getMinute(), datetime.getSecond());
+        cal.set(Calendar.MILLISECOND, datetime.getNano()/1000000);
         return new Timestamp(cal.getTimeInMillis());
     }
 }

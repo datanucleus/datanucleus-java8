@@ -50,6 +50,7 @@ public class OffsetTimeSqlTimeConverter implements TypeConverter<OffsetTime, Tim
         }
         Calendar cal = Calendar.getInstance();
         cal.set(0, 0, 0, time.getHour(), time.getMinute(), time.getSecond());
+        cal.set(Calendar.MILLISECOND, time.getNano()/1000000);
         return new Time(cal.getTimeInMillis());
     }
 }
