@@ -17,6 +17,8 @@ Contributors:
 **********************************************************************/
 package org.datanucleus.store.types.java8.rdbms.sql.method;
 
+import static java.util.Arrays.asList;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,6 +55,9 @@ public class LocalTimeGetSecond3Method extends AbstractSQLMethod
         List funcArgs = new ArrayList(2);
         funcArgs.add(day);
         funcArgs.add(expr);
-        return new NumericExpression(stmt, getMappingForClass(int.class), "date_part", funcArgs);
+        NumericExpression secondExpr = new NumericExpression(stmt, getMappingForClass(int.class), "date_part", funcArgs);
+        List castArgs = new ArrayList();
+        castArgs.add(secondExpr);
+        return new NumericExpression(stmt, getMappingForClass(int.class), "CAST", castArgs, asList("INTEGER"));
     }
 }
