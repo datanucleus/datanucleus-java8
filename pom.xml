@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>datanucleus-java8</artifactId>
-    <version>4.0.5-SNAPSHOT</version>
+    <version>4.1.0-m1-SNAPSHOT</version>
 
     <name>DataNucleus Java8 plugin</name>
     <description>
@@ -25,8 +25,8 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <dn.core.version>4.0.1</dn.core.version>
-        <dn.rdbms.version>4.0.0-m4</dn.rdbms.version>
+        <dn.core.version>4.1.0-m1-SNAPSHOT</dn.core.version>
+        <dn.rdbms.version>4.1.0-m1-SNAPSHOT</dn.rdbms.version>
     </properties>
 
     <dependencies>
