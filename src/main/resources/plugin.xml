@@ -73,6 +73,8 @@ Contributors:
         <java-type name="java.util.Vector" wrapper-type="org.datanucleus.store.types.java8.wrappers.Vector"
             wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.Vector"
             container-handler="org.datanucleus.store.types.containers.VectorHandler" priority="1"/>
+        <java-type name="java.util.Optional" 
+            container-handler="org.datanucleus.store.types.java8.containers.OptionalHandler"/>   
     </extension>
 
     <!-- TYPE CONVERTERS -->
@@ -218,5 +220,9 @@ Contributors:
         <sql-method class="java.time.LocalDateTime" method="getSecond" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetSecond4Method" datastore="sqlserver"/>
         <sql-method class="java.time.LocalDateTime" method="getSecond" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetSecond5Method" datastore="hsql"/>
 
+    </extension>
+    
+    <extension point="org.datanucleus.store.rdbms.java_mapping">
+        <mapping java-type="java.util.Optional" mapping-class="org.datanucleus.store.rdbms.mapping.java.SingleCollectionMapping"/>
     </extension>
 </plugin>
