@@ -39,7 +39,7 @@
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-rdbms</artifactId>
-            <version>[${dn.rdbms.version}, )</version>
+            <version>[${dn.rdbms.version}, 4.9)</version>
             <optional>true</optional>
             <scope>provided</scope>
         </dependency>
