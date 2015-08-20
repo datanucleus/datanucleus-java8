@@ -13,9 +13,8 @@ import org.datanucleus.store.types.containers.CollectionHandler;
 
 public class OptionalHandler extends CollectionHandler<Optional>
 {
-
     @Override
-    public Optional newContainer()
+    public Optional newContainer(AbstractMemberMetaData mmm)
     {
         return Optional.empty();
     }
@@ -27,7 +26,7 @@ public class OptionalHandler extends CollectionHandler<Optional>
     }
 
     @Override
-    public Optional newContainer(Object... values)
+    public Optional newContainer(AbstractMemberMetaData mmd, Object... values)
     {
         return Optional.ofNullable(values[0]);
     }
