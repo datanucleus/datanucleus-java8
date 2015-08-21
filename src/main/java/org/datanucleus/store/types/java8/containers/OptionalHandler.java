@@ -32,9 +32,8 @@ public class OptionalHandler extends CollectionHandler<Optional>
     }
 
     @Override
-    public void populateMetaData(MetaDataManager mmgr, AbstractMemberMetaData mmd)
+    public void populateMetaData(ClassLoaderResolver clr, ClassLoader primary, MetaDataManager mmgr, AbstractMemberMetaData mmd)
     {
-        super.populateMetaData(mmgr, mmd);
         mmd.getCollection().setSingleElement(true);
 
         // Get columns defined metadata - not visible
@@ -55,6 +54,8 @@ public class OptionalHandler extends CollectionHandler<Optional>
             colmd.setAllowsNull(Boolean.TRUE);
             mmd.addColumn(colmd);
         }
+        
+        super.populateMetaData(clr, primary, mmgr, mmd);
     }
 
     /**
