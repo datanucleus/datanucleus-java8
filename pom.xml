@@ -27,6 +27,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <dn.core.version>4.1.0-release</dn.core.version>
         <dn.rdbms.version>4.1.0-release</dn.rdbms.version>
+        <dn.api.jdo.version>4.2.0-m3-SNAPSHOT</dn.api.jdo.version>
+        <jdo.version>3.2.0-m2</jdo.version>
     </properties>
 
     <dependencies>
@@ -40,6 +42,20 @@
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-rdbms</artifactId>
             <version>[${dn.rdbms.version}, )</version>
+            <optional>true</optional>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-api-jdo</artifactId>
+            <version>[${dn.api.jdo.version}, )</version>
+            <optional>true</optional>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>javax.jdo</artifactId>
+            <version>[${jdo.version}, )</version>
             <optional>true</optional>
             <scope>provided</scope>
         </dependency>
