@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>datanucleus-java8</artifactId>
-    <version>4.1.1-SNAPSHOT</version>
+    <version>4.2.0-m1-SNAPSHOT</version>
 
     <name>DataNucleus Java8 plugin</name>
     <description>
@@ -27,35 +27,35 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <dn.core.version>4.1.0-release</dn.core.version>
         <dn.rdbms.version>4.1.0-release</dn.rdbms.version>
-        <dn.api.jdo.version>4.2.0-m3-SNAPSHOT</dn.api.jdo.version>
-        <jdo.version>3.2.0-m2</jdo.version>
+        <dn.api.jdo.version>4.2.0-m3</dn.api.jdo.version>
+        <jdo.version>3.2.0-m3</jdo.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-core</artifactId>
-            <version>[${dn.core.version}, )</version>
+            <version>[${dn.core.version}, 4.9)</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-rdbms</artifactId>
-            <version>[${dn.rdbms.version}, )</version>
+            <version>[${dn.rdbms.version}, 4.9)</version>
             <optional>true</optional>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-api-jdo</artifactId>
-            <version>[${dn.api.jdo.version}, )</version>
+            <version>[${dn.api.jdo.version}, 4.9)</version>
             <optional>true</optional>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>javax.jdo</artifactId>
-            <version>[${jdo.version}, )</version>
+            <version>[${jdo.version}, 3.9)</version>
             <optional>true</optional>
             <scope>provided</scope>
         </dependency>
