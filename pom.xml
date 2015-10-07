@@ -27,7 +27,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <dn.core.version>4.1.0-release</dn.core.version>
         <dn.rdbms.version>4.1.0-release</dn.rdbms.version>
-        <dn.api.jdo.version>4.2.0-m3</dn.api.jdo.version>
+        <dn.api.jdo.version>4.2.0-release</dn.api.jdo.version>
         <jdo.version>3.2.0-m3</jdo.version>
     </properties>
 
