@@ -36,7 +36,7 @@ public class InstantTimestampConverter implements TypeConverter<Instant, Timesta
             return null;
         }
 
-        return Instant.ofEpochMilli(ts.getTime());
+        return ts.toInstant();
     }
 
     public Timestamp toDatastoreType(Instant inst)
@@ -45,6 +45,7 @@ public class InstantTimestampConverter implements TypeConverter<Instant, Timesta
         {
             return null;
         }
-        return new Timestamp(inst.toEpochMilli());
+
+        return Timestamp.from(inst);
     }
 }
