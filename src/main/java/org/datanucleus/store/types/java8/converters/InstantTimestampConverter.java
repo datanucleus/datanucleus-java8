@@ -45,6 +45,6 @@ public class InstantTimestampConverter implements TypeConverter<Instant, Timesta
         {
             return null;
         }
-        return new Timestamp(inst.toEpochMilli());
+        return Timestamp.from(inst);
     }
 }
