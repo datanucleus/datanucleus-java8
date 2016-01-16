@@ -48,27 +48,18 @@ public class LocalTimeExpressionImpl extends ComparableExpressionImpl<LocalTime>
         super(queryExpr);
     }
 
-    /* (non-Javadoc)
-     * @see org.datanucleus.query.typesafe.DateExpression#getHour()
-     */
     public NumericExpression<Integer> getHour()
     {
         org.datanucleus.query.expression.Expression invokeExpr = new InvokeExpression(queryExpr, "getHour", null);
         return new NumericExpressionImpl<Integer>(invokeExpr);
     }
 
-    /* (non-Javadoc)
-     * @see org.datanucleus.query.typesafe.DateExpression#getMinute()
-     */
     public NumericExpression<Integer> getMinute()
     {
         org.datanucleus.query.expression.Expression invokeExpr = new InvokeExpression(queryExpr, "getMinute", null);
         return new NumericExpressionImpl<Integer>(invokeExpr);
     }
 
-    /* (non-Javadoc)
-     * @see org.datanucleus.query.typesafe.DateExpression#getSecond()
-     */
     public NumericExpression<Integer> getSecond()
     {
         org.datanucleus.query.expression.Expression invokeExpr = new InvokeExpression(queryExpr, "getSecond", null);

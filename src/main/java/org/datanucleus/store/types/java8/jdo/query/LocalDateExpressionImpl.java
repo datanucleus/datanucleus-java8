@@ -48,27 +48,18 @@ public class LocalDateExpressionImpl extends ComparableExpressionImpl<LocalDate>
         super(queryExpr);
     }
 
-    /* (non-Javadoc)
-     * @see javax.jdo.query.LocalDateExpression#getDayOfMonth()
-     */
     public NumericExpression<Integer> getDayOfMonth()
     {
         org.datanucleus.query.expression.Expression invokeExpr = new InvokeExpression(queryExpr, "getDayOfMonth", null);
         return new NumericExpressionImpl<Integer>(invokeExpr);
     }
 
-    /* (non-Javadoc)
-     * @see javax.jdo.query.LocalDateExpression#getMonthValue()
-     */
     public NumericExpression<Integer> getMonthValue()
     {
         org.datanucleus.query.expression.Expression invokeExpr = new InvokeExpression(queryExpr, "getMonthValue", null);
         return new NumericExpressionImpl<Integer>(invokeExpr);
     }
 
-    /* (non-Javadoc)
-     * @see javax.jdo.query.LocalDateExpression#getYear()
-     */
     public NumericExpression<Integer> getYear()
     {
         org.datanucleus.query.expression.Expression invokeExpr = new InvokeExpression(queryExpr, "getYear", null);

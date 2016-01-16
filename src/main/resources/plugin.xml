@@ -35,46 +35,31 @@ Contributors:
         <java-type name="java.time.ZoneOffset" dfg="true" embedded="true" converter-name="dn.zoneoffset-string"/>
 
         <java-type name="java.util.ArrayList" wrapper-type="org.datanucleus.store.types.java8.wrappers.ArrayList"
-            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.ArrayList" 
-            container-handler="org.datanucleus.store.types.containers.ArrayListHandler" priority="1"/>
+            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.ArrayList" priority="1"/>
         <java-type name="java.util.Collection" wrapper-type="org.datanucleus.store.types.java8.wrappers.Collection"
-            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.Collection" 
-            container-handler="org.datanucleus.store.types.containers.JDKCollectionHandler" priority="1"/>
+            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.Collection" priority="1"/>
         <java-type name="java.util.HashSet" wrapper-type="org.datanucleus.store.types.java8.wrappers.HashSet"
-            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.HashSet" 
-            container-handler="org.datanucleus.store.types.containers.HashSetHandler" priority="1"/>
+            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.HashSet" priority="1"/>
         <java-type name="java.util.LinkedHashSet" wrapper-type="org.datanucleus.store.types.java8.wrappers.LinkedHashSet"
-            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.LinkedHashSet" 
-            container-handler="org.datanucleus.store.types.containers.LinkedHashSetHandler" priority="1"/>
+            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.LinkedHashSet" priority="1"/>
         <java-type name="java.util.LinkedList" wrapper-type="org.datanucleus.store.types.java8.wrappers.LinkedList"
-            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.LinkedList" 
-            container-handler="org.datanucleus.store.types.containers.LinkedListHandler" priority="1"/>
+            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.LinkedList" priority="1"/>
         <java-type name="java.util.List" wrapper-type="org.datanucleus.store.types.java8.wrappers.List"
-            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.List"
-            container-handler="org.datanucleus.store.types.containers.ArrayListHandler" priority="1"/>
+            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.List" priority="1"/>
         <java-type name="java.util.PriorityQueue" wrapper-type="org.datanucleus.store.types.java8.wrappers.PriorityQueue"
-            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.PriorityQueue"
-            container-handler="org.datanucleus.store.types.containers.PriorityQueueHandler" priority="1"/>
+            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.PriorityQueue" priority="1"/>
         <java-type name="java.util.Queue" wrapper-type="org.datanucleus.store.types.java8.wrappers.Queue"
-            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.Queue"
-            container-handler="org.datanucleus.store.types.containers.PriorityQueueHandler" priority="1"/>
+            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.Queue" priority="1"/>
         <java-type name="java.util.Set" wrapper-type="org.datanucleus.store.types.java8.wrappers.Set"
-            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.Set"
-            container-handler="org.datanucleus.store.types.containers.HashSetHandler" priority="1"/>
+            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.Set" priority="1"/>
         <java-type name="java.util.SortedSet" wrapper-type="org.datanucleus.store.types.java8.wrappers.SortedSet"
-            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.SortedSet"
-            container-handler="org.datanucleus.store.types.containers.TreeSetHandler" priority="1"/>
+            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.SortedSet" priority="1"/>
         <java-type name="java.util.Stack" wrapper-type="org.datanucleus.store.types.java8.wrappers.Stack"
-            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.Stack"
-            container-handler="org.datanucleus.store.types.containers.StackHandler" priority="1"/>
+            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.Stack" priority="1"/>
         <java-type name="java.util.TreeSet" wrapper-type="org.datanucleus.store.types.java8.wrappers.TreeSet"
-            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.TreeSet"
-            container-handler="org.datanucleus.store.types.containers.TreeSetHandler" priority="1"/>
+            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.TreeSet" priority="1"/>
         <java-type name="java.util.Vector" wrapper-type="org.datanucleus.store.types.java8.wrappers.Vector"
-            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.Vector"
-            container-handler="org.datanucleus.store.types.containers.VectorHandler" priority="1"/>
-        <java-type name="java.util.Optional" 
-            container-handler="org.datanucleus.store.types.java8.containers.OptionalHandler"/>   
+            wrapper-type-backed="org.datanucleus.store.types.java8.wrappers.backed.Vector" priority="1"/>
     </extension>
 
     <!-- TYPE CONVERTERS -->
@@ -177,64 +162,47 @@ Contributors:
         <sql-method class="java.time.LocalTime" method="getHour" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetHour2Method" datastore="oracle"/>
         <sql-method class="java.time.LocalTime" method="getHour" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetHour3Method" datastore="postgresql"/>
         <sql-method class="java.time.LocalTime" method="getHour" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetHour4Method" datastore="sqlserver"/>
-        <sql-method class="java.time.LocalTime" method="getHour" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetHour5Method" datastore="sqlite"/>
         <sql-method class="java.time.LocalTime" method="getMinute" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetMinuteMethod"/>
         <sql-method class="java.time.LocalTime" method="getMinute" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetMinute2Method" datastore="oracle"/>
         <sql-method class="java.time.LocalTime" method="getMinute" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetMinute3Method" datastore="postgresql"/>
         <sql-method class="java.time.LocalTime" method="getMinute" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetMinute4Method" datastore="sqlserver"/>
-        <sql-method class="java.time.LocalTime" method="getMinute" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetMinute5Method" datastore="sqlite"/>
         <sql-method class="java.time.LocalTime" method="getSecond" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetSecondMethod"/>
         <sql-method class="java.time.LocalTime" method="getSecond" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetSecond2Method" datastore="oracle"/>
         <sql-method class="java.time.LocalTime" method="getSecond" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetSecond3Method" datastore="postgresql"/>
         <sql-method class="java.time.LocalTime" method="getSecond" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetSecond4Method" datastore="sqlserver"/>
         <sql-method class="java.time.LocalTime" method="getSecond" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetSecond5Method" datastore="hsql"/>
-        <sql-method class="java.time.LocalTime" method="getSecond" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetSecond6Method" datastore="sqlite"/>
 
         <sql-method class="java.time.LocalDate" method="getDayOfMonth" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetDayOfMonthMethod"/>
         <sql-method class="java.time.LocalDate" method="getDayOfMonth" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetDayOfMonth2Method" datastore="oracle"/>
         <sql-method class="java.time.LocalDate" method="getDayOfMonth" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetDayOfMonth3Method" datastore="postgresql"/>
-        <sql-method class="java.time.LocalDate" method="getDayOfMonth" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetDayOfMonth4Method" datastore="sqlite"/>
         <sql-method class="java.time.LocalDate" method="getMonthValue" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetMonthValueMethod"/>
         <sql-method class="java.time.LocalDate" method="getMonthValue" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetMonthValue2Method" datastore="oracle"/>
         <sql-method class="java.time.LocalDate" method="getMonthValue" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetMonthValue3Method" datastore="postgresql"/>
-        <sql-method class="java.time.LocalDate" method="getMonthValue" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetMonthValue4Method" datastore="sqlite"/>
         <sql-method class="java.time.LocalDate" method="getYear" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetYearMethod"/>
         <sql-method class="java.time.LocalDate" method="getYear" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetYear2Method" datastore="oracle"/>
         <sql-method class="java.time.LocalDate" method="getYear" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetYear3Method" datastore="postgresql"/>
-        <sql-method class="java.time.LocalDate" method="getYear" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetYear4Method" datastore="sqlite"/>
 
         <sql-method class="java.time.LocalDateTime" method="getDayOfMonth" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetDayOfMonthMethod"/>
         <sql-method class="java.time.LocalDateTime" method="getDayOfMonth" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetDayOfMonth2Method" datastore="oracle"/>
         <sql-method class="java.time.LocalDateTime" method="getDayOfMonth" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetDayOfMonth3Method" datastore="postgresql"/>
-        <sql-method class="java.time.LocalDateTime" method="getDayOfMonth" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetDayOfMonth4Method" datastore="sqlite"/>
         <sql-method class="java.time.LocalDateTime" method="getMonthValue" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetMonthValueMethod"/>
         <sql-method class="java.time.LocalDateTime" method="getMonthValue" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetMonthValue2Method" datastore="oracle"/>
         <sql-method class="java.time.LocalDateTime" method="getMonthValue" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetMonthValue3Method" datastore="postgresql"/>
-        <sql-method class="java.time.LocalDateTime" method="getMonthValue" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetMonthValue4Method" datastore="sqlite"/>
         <sql-method class="java.time.LocalDateTime" method="getYear" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetYearMethod"/>
         <sql-method class="java.time.LocalDateTime" method="getYear" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetYear2Method" datastore="oracle"/>
         <sql-method class="java.time.LocalDateTime" method="getYear" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetYear3Method" datastore="postgresql"/>
-        <sql-method class="java.time.LocalDateTime" method="getYear" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalDateGetYear4Method" datastore="sqlite"/>
         <sql-method class="java.time.LocalDateTime" method="getHour" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetHourMethod"/>
         <sql-method class="java.time.LocalDateTime" method="getHour" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetHour2Method" datastore="oracle"/>
         <sql-method class="java.time.LocalDateTime" method="getHour" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetHour3Method" datastore="postgresql"/>
         <sql-method class="java.time.LocalDateTime" method="getHour" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetHour4Method" datastore="sqlserver"/>
-        <sql-method class="java.time.LocalDateTime" method="getHour" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetHour5Method" datastore="sqlite"/>
         <sql-method class="java.time.LocalDateTime" method="getMinute" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetMinuteMethod"/>
         <sql-method class="java.time.LocalDateTime" method="getMinute" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetMinute2Method" datastore="oracle"/>
         <sql-method class="java.time.LocalDateTime" method="getMinute" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetMinute3Method" datastore="postgresql"/>
         <sql-method class="java.time.LocalDateTime" method="getMinute" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetMinute4Method" datastore="sqlserver"/>
-        <sql-method class="java.time.LocalDateTime" method="getMinute" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetMinute5Method" datastore="sqlite"/>
         <sql-method class="java.time.LocalDateTime" method="getSecond" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetSecondMethod"/>
         <sql-method class="java.time.LocalDateTime" method="getSecond" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetSecond2Method" datastore="oracle"/>
         <sql-method class="java.time.LocalDateTime" method="getSecond" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetSecond3Method" datastore="postgresql"/>
         <sql-method class="java.time.LocalDateTime" method="getSecond" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetSecond4Method" datastore="sqlserver"/>
         <sql-method class="java.time.LocalDateTime" method="getSecond" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetSecond5Method" datastore="hsql"/>
-        <sql-method class="java.time.LocalDateTime" method="getSecond" evaluator="org.datanucleus.store.types.java8.rdbms.sql.method.LocalTimeGetSecond6Method" datastore="sqlite"/>
-
-    </extension>
-    
-    <extension point="org.datanucleus.store.rdbms.java_mapping">
-        <mapping java-type="java.util.Optional" mapping-class="org.datanucleus.store.rdbms.mapping.java.SingleCollectionMapping"/>
     </extension>
 </plugin>

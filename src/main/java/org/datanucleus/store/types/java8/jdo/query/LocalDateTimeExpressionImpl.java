@@ -48,54 +48,36 @@ public class LocalDateTimeExpressionImpl extends ComparableExpressionImpl<LocalD
         super(queryExpr);
     }
 
-    /* (non-Javadoc)
-     * @see org.datanucleus.store.types.jdo.query.LocalDateTimeExpression#getDayOfMonth()
-     */
     public NumericExpression<Integer> getDayOfMonth()
     {
         org.datanucleus.query.expression.Expression invokeExpr = new InvokeExpression(queryExpr, "getDayOfMonth", null);
         return new NumericExpressionImpl<Integer>(invokeExpr);
     }
 
-    /* (non-Javadoc)
-     * @see org.datanucleus.store.types.jdo.query.LocalDateTimeExpression#getHour()
-     */
     public NumericExpression<Integer> getHour()
     {
         org.datanucleus.query.expression.Expression invokeExpr = new InvokeExpression(queryExpr, "getHour", null);
         return new NumericExpressionImpl<Integer>(invokeExpr);
     }
 
-    /* (non-Javadoc)
-     * @see org.datanucleus.store.types.jdo.query.LocalDateTimeExpression#getMinute()
-     */
     public NumericExpression<Integer> getMinute()
     {
         org.datanucleus.query.expression.Expression invokeExpr = new InvokeExpression(queryExpr, "getMinute", null);
         return new NumericExpressionImpl<Integer>(invokeExpr);
     }
 
-    /* (non-Javadoc)
-     * @see org.datanucleus.store.types.jdo.query.LocalDateTimeExpression#getMonthValue()
-     */
     public NumericExpression<Integer> getMonthValue()
     {
         org.datanucleus.query.expression.Expression invokeExpr = new InvokeExpression(queryExpr, "getMonthValue", null);
         return new NumericExpressionImpl<Integer>(invokeExpr);
     }
 
-    /* (non-Javadoc)
-     * @see org.datanucleus.store.types.jdo.query.LocalDateTimeExpression#getSecond()
-     */
     public NumericExpression<Integer> getSecond()
     {
         org.datanucleus.query.expression.Expression invokeExpr = new InvokeExpression(queryExpr, "getSecond", null);
         return new NumericExpressionImpl<Integer>(invokeExpr);
     }
 
-    /* (non-Javadoc)
-     * @see org.datanucleus.store.types.jdo.query.LocalDateTimeExpression#getYear()
-     */
     public NumericExpression<Integer> getYear()
     {
         org.datanucleus.query.expression.Expression invokeExpr = new InvokeExpression(queryExpr, "getYear", null);
