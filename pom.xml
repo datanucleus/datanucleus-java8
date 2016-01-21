@@ -55,7 +55,7 @@
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>javax.jdo</artifactId>
-            <version>[${jdo.version}, 3.9)</version>
+            <version>${jdo.version}</version>
             <optional>true</optional>
             <scope>provided</scope>
         </dependency>
