@@ -111,6 +111,8 @@ Contributors:
 
         <type-converter name="dn.instant-timestamp" member-type="java.time.Instant" datastore-type="java.sql.Timestamp"
             converter-class="org.datanucleus.store.types.java8.converters.InstantTimestampConverter"/>
+        <type-converter name="dn.instant-date" member-type="java.time.Instant" datastore-type="java.util.Date"
+            converter-class="org.datanucleus.store.types.java8.converters.InstantDateConverter"/>
         <type-converter name="dn.instant-string" member-type="java.time.Instant" datastore-type="java.lang.String"
             converter-class="org.datanucleus.store.types.java8.converters.InstantStringConverter"/>
         <type-converter name="dn.instant-long" member-type="java.time.Instant" datastore-type="java.lang.Long"
