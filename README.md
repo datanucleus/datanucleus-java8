@@ -10,8 +10,7 @@ This is built using Maven, by executing `mvn clean install` which installs the b
 KeyFacts
 --------
 __License__ : Apache 2 licensed  
-__Issue Tracker__ : http://www.datanucleus.org/servlet/jira/browse/NUCJAVAEIGHT  
-__RoadMap__ : http://issues.datanucleus.org/browse/NUCJAVAEIGHT?report=com.atlassian.jira.plugin.system.project:roadmap-panel  
+__Issue Tracker__ : http://github.com/datanucleus/datanucleus-java8/issues    
 __Javadocs__ : [4.2](http://www.datanucleus.org/javadocs/store.types.java8/4.2/), [4.1](http://www.datanucleus.org/javadocs/store.types.java8/4.1/), [4.0](http://www.datanucleus.org/javadocs/store.types.java8/4.0/)  
 __Download(Releases)__ : [Maven Central](http://central.maven.org/maven2/org/datanucleus/datanucleus-java8)  
 __Download(Nightly)__ : [Nightly Builds](http://www.datanucleus.org/downloads/maven2-nightly/org/datanucleus/datanucleus-java8)  
