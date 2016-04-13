@@ -1,7 +1,7 @@
 datanucleus-java8
 =================
 
-DataNucleus support for persisting Java 1.8 types.  
+DataNucleus support for persisting Java 8 types.  
 __This is not required starting from DataNucleus v5 since it is then merged into core support.__
 
 This is built using Maven, by executing `mvn clean install` which installs the built jar in your local Maven repository.
